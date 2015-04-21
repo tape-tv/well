@@ -71,4 +71,15 @@ describe Well do
       %Q{<div class="foo bar wrapper"></div>}
     )
   end
+
+  context ActionView do
+
+    specify 'DSL is available inside views' do
+      view = ActionView::Base.new
+      output = view.render(inline: %Q{<%= block(:div, 'container') { 'Text' } %>})
+
+      expect(output).to eq(block(:div, 'container') { 'Text' })
+    end
+
+  end
 end
