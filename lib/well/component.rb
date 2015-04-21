@@ -2,7 +2,7 @@ require 'action_view'
 
 module Well
   module Component
-    include ActionView::Helpers, ActionView::Context
+    include ActionView::Helpers
 
     attr_reader :identifier
 
