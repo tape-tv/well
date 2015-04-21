@@ -22,7 +22,7 @@ describe Well do
     output = block(:section, 'sidebar', modifier: 'left')
 
     expect(output).to match_html(
-      %Q{<section class="sidebar--left"></section>}
+      %Q{<section class="sidebar sidebar--left"></section>}
     )
   end
 
@@ -34,14 +34,14 @@ describe Well do
     expect(output).to match_html(
       %Q{
         <div class="popup">
-          <button class="popup__sign-up--green">Sign up</button>
+          <button class="popup__sign-up popup__sign-up--green">Sign up</button>
         </div>
       }
     )
   end
 
   specify 'nested elements' do
-    output = block(:article, 'blog-post') do
+    output = block(:article, 'blog-post', modifier: 'old') do
       element(:header, 'splash') do
         element(:h1, 'splash-title') do
           concat('My blog post')
@@ -52,7 +52,7 @@ describe Well do
 
     expect(output).to match_html(
       %Q{
-        <article class="blog-post">
+        <article class="blog-post blog-post--old">
           <header class="blog-post__splash">
             <h1 class="blog-post__splash-title">
               My blog post

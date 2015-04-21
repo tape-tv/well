@@ -4,8 +4,14 @@ module Well
   module Component
     include ActionView::Helpers, ActionView::Context
 
+    attr_reader :identifier
+
     def output_buffer
       @output_buffer ||= ActionView::OutputBuffer.new
+    end
+
+    def modifier
+      @modifier ||= @opts[:modifier]
     end
 
     def other_classes
@@ -13,11 +19,9 @@ module Well
     end
 
     def output_classes
-      @output_classes ||= (other_classes << compiled_identifier)
-    end
-
-    def modifier
-      @modifier ||= @opts[:modifier]
+      @output_classes ||= (
+        (other_classes << compiled_identifier << modified_identifier).compact
+      )
     end
 
     def evaluate(&content)
@@ -31,6 +35,11 @@ module Well
 
     def compiled_identifier
       raise NotImplementedError
+    end
+
+    def modified_identifier
+      return unless modifier
+      "#{compiled_identifier}#{Well.config.modifier_separator}#{modifier}"
     end
 
     def element(*args, &content)

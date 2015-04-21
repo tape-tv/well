@@ -14,9 +14,7 @@ module Well
     end
 
     def compiled_identifier
-      ids = [@identifier]
-      ids << Well.config.modifier_separator << modifier if modifier
-      ids.join
+      identifier
     end
   end
 end
