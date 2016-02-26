@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'BEM stuff for ActionView'
   spec.homepage      = 'https://github.com/tape-tv/well'
   spec.license       = 'MIT'
+  spec.description   = 'Helpers for working with BEM CSS classes when building Rails views.'
 
   spec.files         = Dir['lib/**/*'] + ['README.md', 'LICENSE.txt']
   spec.test_files    = Dir['spec/**/*']
