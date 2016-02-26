@@ -1,4 +1,7 @@
-require 'action_view'
+# @author Joe Corcoran <joe@corcoran.io>
+# Namespace module.
+module Well
+end
 
 require 'well/block'
 require 'well/config'
