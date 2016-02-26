@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = 'well'
   spec.version       = Well::VERSION
   spec.authors       = ['Joe Corcoran']
-  spec.email         = ['joecorcoran@gmail.com']
+  spec.email         = ['opensource@tape.tv', 'joe@corcoran.io']
   spec.summary       = 'BEM stuff for ActionView'
-  spec.homepage      = 'https://github.com/joecorcoran/well'
+  spec.homepage      = 'https://github.com/tape-tv/well'
   spec.license       = 'MIT'
 
   spec.files         = Dir['lib/**/*'] + ['README.md', 'LICENSE.txt']
@@ -21,4 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.9'
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'oga', '~> 0.3'
+  spec.add_development_dependency 'yard', '~> 0.8'
 end
