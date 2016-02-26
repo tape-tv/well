@@ -45,6 +45,7 @@ module Well
       content_tag(@tag_name, result, class: output_classes)
     end
 
+    # Must be implemented by composing classes.
     # @abstract
     def compiled_identifier
       raise NotImplementedError

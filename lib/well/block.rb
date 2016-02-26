@@ -9,6 +9,7 @@ module Well
     # @param [Symbol] tag_name The name of the HTML element to build
     # @param [String] identifier The main CSS class which represents
     #   the role of the BEM block
+    # @param [Hash] opts
     def initialize(tag_name, identifier, opts = {})
       @tag_name, @identifier, @opts = tag_name, identifier, opts
     end
@@ -20,6 +21,7 @@ module Well
       self
     end
 
+    # Builds CSS class representing BEM block component.
     # @return [String]
     def compiled_identifier
       identifier

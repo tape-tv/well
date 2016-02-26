@@ -15,10 +15,15 @@ module Well
       @base, @tag_name, @identifier, @opts = base, tag_name, identifier, opts
     end
 
+    # The base evaludation context for a BEM element can be either a {Block}
+    # or an {Element}.
+    # @return [Block,Element]
     def base
       @base
     end
 
+    # Builds CSS class representing BEM element component.
+    # @return [String]
     def compiled_identifier
       ids = [base.identifier]
       ids << Well.config.element_separator << identifier
