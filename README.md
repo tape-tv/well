@@ -8,30 +8,7 @@ BEM stuff for ActionView.
 
 ## Usage
 
-Use the DSL in your views. The following view...
-
-```erb
-<%= block :div, 'container' do %>
-  Text
-  <%= element :p, 'foreword' do %>
-    More text
-  <% end %>
-<% end %>
-```
-
-...produces this HTML.
-
-```html
-<div class="container">
-  Text
-  <p class="container__foreword">
-    More text 
-  </p>
-</div>
-```
-
-For more examples, including working with modifiers, see
-[the docs](http://www.rubydoc.info/github/tape-tv/well/master).
+For examples, see [the docs](http://www.rubydoc.info/github/tape-tv/well/master/Well).
 
 ## License
 
